@@ -1,0 +1,13 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "style.scss",
+        "_header.scss",
+        "_sidebar.scss",
+        "_categoriesbar.scss",
+        "_video.scss"
+    ],
+    "names": [],
+    "file": "style.css"
+}
