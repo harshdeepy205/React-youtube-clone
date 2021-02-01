@@ -7,7 +7,6 @@ import Video from '../../Components/header/video/Video'
 const HomeScreen = () => {
     return (
         <>
-            HomeScreen
             <Container>
                 <CategoriesBar />
                 <Row>

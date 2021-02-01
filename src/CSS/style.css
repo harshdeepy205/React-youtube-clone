@@ -212,6 +212,37 @@ body {
   }
 }
 
+.CategoriesBar {
+  padding: 0.5rem 0;
+  font-size: 0.8rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow-x: scroll;
+}
+
+.CategoriesBar::-webkit-scrollbar {
+  width: 0px;
+}
+
+.CategoriesBar span {
+  margin-right: 1rem;
+  padding: 0.5rem;
+  white-space: nowrap;
+  border: 1.5px solid #b1bdb4;
+  border-radius: 999px;
+}
+
+.CategoriesBar span:hover {
+  background-color: #374a59;
+}
+
+.CategoriesBar span.active {
+  color: #ffffff;
+  background-color: #606060;
+  border-color: #4c4c4c;
+}
+
 * {
   margin: 0;
   padding: 0;

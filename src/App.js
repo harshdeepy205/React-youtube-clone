@@ -9,13 +9,13 @@ function App() {
 
   const [sidebar, toggleSidebar] = useState(false);
 
-  const handleToggleSideBar = () => toggleSidebar(value => !value);
+  const handleToggleSideBar = () => toggleSidebar(!sidebar);
 
   return (
     <>
       <Header handleToggleSideBar={handleToggleSideBar} />
       <div className="app__container border border-info">
-        <SideBar sidebar={sidebar} handleToggleSideBar={handleToggleSideBar} />
+        <SideBar sidebar={sidebar} handleToggleSideBar={toggleSidebar} />
         <Container fluid className="app__main border border-warning">
           <HomeScreen />
         </Container>
