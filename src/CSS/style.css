@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -14,6 +15,10 @@ body {
   color: #b1bdb4 !important;
   font-family: "Roboto",sans-serif;
   letter-spacing: 0.1px;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
 }
 
 .header {
@@ -139,6 +144,10 @@ body {
   letter-spacing: 0.1px;
 }
 
+::-webkit-scrollbar {
+  width: 0px;
+}
+
 .sidebar {
   background-color: #121417;
   display: -webkit-box;
@@ -219,6 +228,7 @@ body {
   display: -ms-flexbox;
   display: flex;
   overflow-x: scroll;
+  scrollbar-width: none;
 }
 
 .CategoriesBar::-webkit-scrollbar {
@@ -256,6 +266,95 @@ body {
   color: #b1bdb4 !important;
   font-family: "Roboto",sans-serif;
   letter-spacing: 0.1px;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+.video {
+  margin-bottom: 1rem;
+  padding: 0.7rem;
+  font-weight: 500;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.video__top {
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+
+.video__top img {
+  width: 100%;
+}
+
+.video__top span {
+  position: absolute;
+  bottom: 0.3rem;
+  right: 0.3rem;
+  padding: 0.2rem;
+  background: #080808ec;
+  border-radius: 3px;
+}
+
+.video__title {
+  margin-bottom: 0.1rem;
+  color: #fff;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.video__details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.video__channel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0.5rem 0;
+}
+
+.video__channel img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+
+.video__channel p {
+  margin-bottom: 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background: #16181b !important;
+  background-attachment: fixed;
+  color: #b1bdb4 !important;
+  font-family: "Roboto",sans-serif;
+  letter-spacing: 0.1px;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
 }
 
 .app__container {
