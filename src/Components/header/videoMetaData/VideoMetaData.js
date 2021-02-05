@@ -4,25 +4,29 @@ import numeral from "numeral"
 import { MdThumbUp, MdThumbDown } from "react-icons/md";
 import ShowMoreText from 'react-show-more-text'
 
-const VideoMetaData = () => {
+const VideoMetaData = ({ video: { snippet, statistics }, videoId }) => {
+
+    const { channelId, channelTitle, description, title, publishedAt } = snippet
+    const { viewCount, likeCount, dislikeCount } = statistics
+
     return (
         <>
             <div className="videoMetaData py-2">
                 <div className="videoMetaData__top">
-                    <h5>Video Title</h5>
+                    <h5>{title}</h5>
                     <div className="d-flex justify-content-between align-items-center py-1">
                         <span>
-                            {numeral(10000).format("0.a")} Views •
-                            {moment('2020-06-6').fromNow()}
+                            {numeral(viewCount).format("0.a")} Views •
+                            {moment(publishedAt).fromNow()}
                         </span>
 
                         <div>
                             <span className="mr-3">
-                                <MdThumbUp size={26} />{numeral(10000).format("0.a")}
+                                <MdThumbUp size={26} />{numeral(likeCount).format("0.a")}
                             </span>
 
                             <span className="mr-3">
-                                <MdThumbDown size={26} />{numeral(10000).format("0.a")}
+                                <MdThumbDown size={26} />{numeral(dislikeCount).format("0.a")}
                             </span>
                         </div>
                     </div>
@@ -33,7 +37,7 @@ const VideoMetaData = () => {
                         <img src="https://www.pngkey.com/png/full/114-1149878_setting-user-avatar-in-specific-size-without-breaking.png" alt=""
                             className="rounder-circle mr-3" />
                         <div className="d-flex flex-column">
-                            <span>Channel Name</span>
+                            <span>{channelTitle}</span>
                             <span> {numeral(10000).format("0.a")} Subscribers</span>
                         </div>
                     </div>
@@ -49,18 +53,7 @@ const VideoMetaData = () => {
                         anchorClass='showMoreText'
                         expanded={false}
                     >
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                        nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        Duis aute irure dolor inreprehenderit in voluptate velit esse cillum dolore
-                        eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                        sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                        nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-                        eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                        sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        {description}
                     </ShowMoreText>
                 </div>
             </div>
