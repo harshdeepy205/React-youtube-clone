@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import {
     MdSubscriptions,
     MdExitToApp,
@@ -25,10 +26,13 @@ const SideBar = ({ sidebar, handleToggleSideBar }) => {
                     <MdHome size={23} />
                     <span>Home</span>
                 </li>
-                <li>
-                    <MdSubscriptions size={23} />
-                    <span>Subscriptions</span>
-                </li>
+                <Link to='/feed/subscriptions'>
+                    <li>
+                        <MdSubscriptions size={23} />
+                        <span>Subscriptions</span>
+                    </li>
+                </Link>
+
                 <li>
                     <MdThumbUp size={23} />
                     <span>Liked Videos</span>

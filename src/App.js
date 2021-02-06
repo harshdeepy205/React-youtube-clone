@@ -9,6 +9,7 @@ import './CSS/style.css'
 import HomeScreen from './Screens/homeScreen/HomeScreen';
 import LoginScreen from './Screens/loginScreen/LoginScreen';
 import SearchScreen from './Screens/SearchScreen';
+import SubscriptionScreen from './Screens/subscriptionScreen/SubscriptionScreen';
 import WatchScreen from './Screens/watchScreen/WatchScreen';
 
 
@@ -63,6 +64,18 @@ function App() {
         <Route path="/watch/:id">
           <Layout>
             <WatchScreen />
+          </Layout>
+        </Route>
+
+        <Route path="/feed/subscriptions">
+          <Layout>
+            <SubscriptionScreen />
+          </Layout>
+        </Route>
+
+        <Route path="/channel/:channelId">
+          <Layout>
+            channel screen
           </Layout>
         </Route>
 

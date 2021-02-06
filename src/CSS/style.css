@@ -578,7 +578,14 @@ body {
   letter-spacing: 0.1px;
   overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 1;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.videoHrizontal__description {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 }
 
@@ -617,11 +624,14 @@ body {
   .videoHrizontal__channel p {
     font-size: 0.9rem;
   }
+  .videoHrizontal__description {
+    display: none;
+  }
   .videoHrizontal__title {
     font-size: 14px;
     overflow: hidden;
     display: -webkit-box;
-    -webkit-line-clamp: 1;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
   }
 }
