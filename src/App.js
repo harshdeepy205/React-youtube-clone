@@ -6,6 +6,7 @@ import './App.css';
 import Header from './Components/header/Header';
 import SideBar from './Components/header/sidebar/SideBar.js'
 import './CSS/style.css'
+import ChannelScreen from './Screens/channelScreen/ChannelScreen';
 import HomeScreen from './Screens/homeScreen/HomeScreen';
 import LoginScreen from './Screens/loginScreen/LoginScreen';
 import SearchScreen from './Screens/SearchScreen';
@@ -75,7 +76,7 @@ function App() {
 
         <Route path="/channel/:channelId">
           <Layout>
-            channel screen
+            <ChannelScreen />
           </Layout>
         </Route>
 

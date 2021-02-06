@@ -10,8 +10,8 @@ import { useHistory } from "react-router-dom";
 const VideoHorizontal = ({ video, searchScreen, subScreen }) => {
 
     const { id, snippet:
-        { channelId, channelTitle, description, title, publishedAt, thumbnails: { medium } },
-        resourceId
+        { channelId, channelTitle, description, title, publishedAt, thumbnails: { medium }, resourceId },
+
     } = video
 
     const isVideo = !(id.kind === 'youtube#channel' || subScreen)
@@ -38,7 +38,7 @@ const VideoHorizontal = ({ video, searchScreen, subScreen }) => {
 
     useEffect(() => {
         const get_channel_icon = async () => {
-            const { data: { items } } = await request('/channel', {
+            const { data: { items } } = await request('/channels', {
                 params: {
                     part: 'snippet',
                     id: channelId
@@ -109,7 +109,7 @@ const VideoHorizontal = ({ video, searchScreen, subScreen }) => {
                             <p className="mt-2">
                                 {
                                     video.contentDetails.totalItemCount
-                                }{' '}Videos
+                                } Videos
                             </p>)
                     }
                 </Col>
