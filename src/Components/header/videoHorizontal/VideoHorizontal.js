@@ -7,9 +7,11 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { Col, Row } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 
-const VideoHorizontal = ({ video }) => {
+const VideoHorizontal = ({ video, searchScreen }) => {
 
     const { id, snippet: { channelId, channelTitle, description, title, publishedAt, thumbnails: { medium } } } = video
+
+    const isVideo = id.kind === 'youtube#video'
 
     const [views, setViews] = useState(null)
     const [duration, setDuration] = useState(null)
@@ -50,35 +52,51 @@ const VideoHorizontal = ({ video }) => {
 
     const history = useHistory()
     const handleClick = () => {
-        history.push(`/watch/${id.videoId}`)
+        isVideo ?
+            history.push(`/watch/${id.videoId}`)
+            : history.push(`/channel/${id.channelId}`)
     }
+
+    const thumbnail = !isVideo && 'videoHrizontal__thumbnail-channel'
 
     return (
         <>
-            <Row className="videoHrizontal m-1 py-2 align-align-items-center" onClick={handleClick}>
-                <Col xs={6} md={6} className="videoHrizontal__left">
+            <Row className="videoHrizontal m-1 py-2 align-items-center" onClick={handleClick}>
+                <Col xs={6} md={searchScreen ? 4 : 6} className="videoHrizontal__left">
                     <LazyLoadImage src={medium.url}
                         effect="blur"
-                        className="videoHrizontal__thumbnail"
+                        className={`videoHrizontal__thumbnail ${thumbnail}`}
                         wrapperClassName="videoHrizontal__thumbnail-wrapper"
                     />
-                    <span className="videoHrizontal__duration">{_duration}</span>
+                    {
+                        isVideo && (
+                            <span className="videoHrizontal__duration">{_duration}</span>
+                        )
+                    }
                 </Col>
-                <Col xs={6} md={6} className="videoHrizontal__right p-0">
+                <Col xs={6} md={searchScreen ? 8 : 6} className="videoHrizontal__right p-0">
                     <p className="videoHrizontal__title mb-1">
                         {title}
                     </p>
-                    <div className="videoHrizontal__details">
 
-                        <AiFillEye /> {numeral(views).format("0.a")} Views •
-                        {moment({ publishedAt }).fromNow()}
-                    </div>
+                    {
+                        isVideo && (<div className="videoHrizontal__details">
+                            <AiFillEye /> {numeral(views).format("0.a")} Views •
+                            {moment({ publishedAt }).fromNow()}
+                        </div>)
+                    }
+
+
+
+                    {isVideo && <p className="mt-1">{description}</p>}
 
                     <div className="videoHrizontal__channel d-flex align-items-center my-1">
-                        {/* <LazyLoadImage src="https://www.pngkey.com/png/full/114-1149878_setting-user-avatar-in-specific-size-without-breaking.png"
-                            effect="blur"
-                          
-                        /> */}
+                        {isVideo && (
+                            <LazyLoadImage src={channelIcon?.url}
+                                effect="blur"
+
+                            />
+                        )}
                         <p className="mb-0">{channelTitle}</p>
                     </div>
 

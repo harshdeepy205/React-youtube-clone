@@ -550,6 +550,11 @@ body {
   width: 100%;
 }
 
+.videoHrizontal__thumbnail-channel {
+  width: 50%;
+  border-radius: 50%;
+}
+
 .videoHrizontal__thumbnail-wrapper {
   width: 100%;
 }

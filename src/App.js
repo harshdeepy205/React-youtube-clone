@@ -8,6 +8,7 @@ import SideBar from './Components/header/sidebar/SideBar.js'
 import './CSS/style.css'
 import HomeScreen from './Screens/homeScreen/HomeScreen';
 import LoginScreen from './Screens/loginScreen/LoginScreen';
+import SearchScreen from './Screens/SearchScreen';
 import WatchScreen from './Screens/watchScreen/WatchScreen';
 
 
@@ -53,9 +54,9 @@ function App() {
           <LoginScreen />
         </Route>
 
-        <Route path="/search">
+        <Route path="/search/:query">
           <Layout>
-            <h1>Search</h1>
+            <SearchScreen />
           </Layout>
         </Route>
 
