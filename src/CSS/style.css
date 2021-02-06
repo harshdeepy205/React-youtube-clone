@@ -447,6 +447,10 @@ body {
   letter-spacing: 0.5px;
 }
 
+.videoMetaData__channel button.btn-gray {
+  background-color: gray;
+}
+
 .videoMetaData__channel button:hover {
   color: #fff;
 }
