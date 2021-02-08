@@ -12,6 +12,15 @@
     top: 10vh;
     left: 0;
 
+    a{
+        color: #b1bdb4;
+        &:hover{
+            color: #b1bdb4;
+            text-decoration: none;
+        }
+    }
+
+
     li{
         display: flex;
         align-items: center;

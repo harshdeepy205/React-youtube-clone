@@ -175,6 +175,15 @@ body {
   left: 0;
 }
 
+.sidebar a {
+  color: #b1bdb4;
+}
+
+.sidebar a:hover {
+  color: #b1bdb4;
+  text-decoration: none;
+}
+
 .sidebar li {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -250,6 +259,7 @@ body {
   white-space: nowrap;
   border: 1.5px solid #b1bdb4;
   border-radius: 999px;
+  cursor: pointer;
 }
 
 .CategoriesBar span:hover {
@@ -426,6 +436,12 @@ body {
   margin-bottom: 2rem;
 }
 
+@media (max-width: 520px) {
+  .watchScreen__player {
+    height: 35vh;
+  }
+}
+
 .videoMetaData__top span {
   cursor: pointer;
 }
@@ -545,6 +561,7 @@ body {
 .videoHrizontal__left {
   position: relative;
   text-align: center;
+  padding-left: 0 !important;
 }
 
 .videoHrizontal__thumbnail {
